@@ -1,0 +1,18 @@
+$button-colors: #3498db, #e74c3c, #2ecc71, #f39c12, #9b59b6
+$button-border-radius: 5px
+
+@for $i from 1 through 5
+  .button-#{$i}
+    background-color: nth($button-colors, $i)
+    color: #fff
+    padding: 10px 20px
+    border: 1px solid darken(nth($button-colors, $i), 10%)
+    border-radius: $button-border-radius
+    margin: 5px
+    width: 110px
+    transition: all 0.3s ease
+
+    &:hover
+      background-color: lighten(nth($button-colors, $i), 10%)
+      transform: scaleY(1.1)
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
